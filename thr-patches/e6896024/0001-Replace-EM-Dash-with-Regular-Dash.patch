@@ -1,0 +1,76 @@
+From 49503163129891cc534889d154dc01d9c11ebb65 Mon Sep 17 00:00:00 2001
+From: icanhasmath <marcg@activestate.com>
+Date: Fri, 1 Mar 2024 11:47:39 -0600
+Subject: [PATCH] Replace EM Dash with Regular Dash
+
+This is messing up the install step, because the EM-Dash is Unicode.
+---
+ PKG-INFO   | 6 +++---
+ README.rst | 6 +++---
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/PKG-INFO b/PKG-INFO
+index a1b5c57..4069f6e 100644
+--- a/PKG-INFO
++++ b/PKG-INFO
+@@ -81,7 +81,7 @@ colored terminal text from Python, and has the happy side-effect that existing
+ applications or libraries which use ANSI sequences to produce colored output on
+ Linux or Macs can now also work on Windows, simply by calling
+ ``colorama.just_fix_windows_console()`` (since v0.4.6) or ``colorama.init()``
+-(all versions, but may have other side-effects – see below).
++(all versions, but may have other side-effects - see below).
+ 
+ An alternative approach is to install ``ansi.sys`` on Windows machines, which
+ provides the same behaviour for all applications running in terminals. Colorama
+@@ -133,7 +133,7 @@ that this makes Windows act like Unix with respect to ANSI escape handling.
+ 
+ It's safe to call this function multiple times. It's safe to call this function
+ on non-Windows platforms, but it won't do anything. It's safe to call this
+-function when one or both of your stdout/stderr are redirected to a file – it
++function when one or both of your stdout/stderr are redirected to a file - it
+ won't do anything to those streams.
+ 
+ Alternatively, you can use the older interface with more features (but also more
+@@ -159,7 +159,7 @@ following differences:
+   Colorama's heuristic is not particularly clever.
+ 
+ - ``init`` also accepts explicit keyword args to enable/disable various
+-  functionality – see below.
++  functionality - see below.
+ 
+ To stop using Colorama before your program exits, simply call ``deinit()``.
+ This will restore ``stdout`` and ``stderr`` to their original values, so that
+diff --git a/README.rst b/README.rst
+index 0b6e52a..51df46d 100644
+--- a/README.rst
++++ b/README.rst
+@@ -54,7 +54,7 @@ colored terminal text from Python, and has the happy side-effect that existing
+ applications or libraries which use ANSI sequences to produce colored output on
+ Linux or Macs can now also work on Windows, simply by calling
+ ``colorama.just_fix_windows_console()`` (since v0.4.6) or ``colorama.init()``
+-(all versions, but may have other side-effects – see below).
++(all versions, but may have other side-effects - see below).
+ 
+ An alternative approach is to install ``ansi.sys`` on Windows machines, which
+ provides the same behaviour for all applications running in terminals. Colorama
+@@ -106,7 +106,7 @@ that this makes Windows act like Unix with respect to ANSI escape handling.
+ 
+ It's safe to call this function multiple times. It's safe to call this function
+ on non-Windows platforms, but it won't do anything. It's safe to call this
+-function when one or both of your stdout/stderr are redirected to a file – it
++function when one or both of your stdout/stderr are redirected to a file - it
+ won't do anything to those streams.
+ 
+ Alternatively, you can use the older interface with more features (but also more
+@@ -132,7 +132,7 @@ following differences:
+   Colorama's heuristic is not particularly clever.
+ 
+ - ``init`` also accepts explicit keyword args to enable/disable various
+-  functionality – see below.
++  functionality - see below.
+ 
+ To stop using Colorama before your program exits, simply call ``deinit()``.
+ This will restore ``stdout`` and ``stderr`` to their original values, so that
+-- 
+2.34.1
+
